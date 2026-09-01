@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon+ Multiservices — Niamey, Niger</title>
+<meta name="description" content="Horizon+ Multiservices à Niamey (Goudel) : démarches administratives et juridiques, immobilier, automobile et commerce général. La solution qui vous rapproche du futur.">
+<meta name="theme-color" content="#1C1B1A">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta property="og:title" content="Horizon+ Multiservices — Niamey, Niger">
+<meta property="og:description" content="Votre partenaire pour l'administratif, l'immobilier, l'automobile et le commerce général à Niamey.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1B1A;
+    --night:#14213D;
+    --orange:#E8622C;
+    --orange-deep:#C74A1D;
+    --amber:#F2A93C;
+    --sand:#F5F0E6;
+    --paper:#FBF8F2;
+    --line: rgba(28,27,26,0.12);
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;background:var(--orange-deep);
+    display:inline-block;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;}
+
+  /* route rule — the signature divider, used between every section */
+  .route-rule{
+    height:14px;
+    width:100%;
+    background-image: radial-gradient(circle, var(--orange) 2px, transparent 2.4px);
+    background-size: 26px 14px;
+    background-position: center;
+    background-repeat: repeat-x;
+    opacity:0.9;
+  }
+  .route-rule.night{background-image: radial-gradient(circle, var(--amber) 2px, transparent 2.4px);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,248,242,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1160px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:baseline;gap:2px;font-family:var(--display);font-weight:700;font-size:21px;}
+  .brand .plus{color:var(--orange);}
+  .navlinks{display:flex;gap:34px;font-size:14.5px;font-weight:500;}
+  .navlinks a{position:relative;padding-bottom:4px;}
+  .navlinks a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--orange);
+    transition:width .25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:var(--mono);font-size:13px;
+    background:var(--ink);color:var(--paper);
+    padding:10px 18px;border-radius:2px;
+    letter-spacing:0.02em;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--orange-deep);}
+  .navtoggle{
+    display:none;flex-direction:column;gap:5px;
+    background:none;border:none;cursor:pointer;padding:6px;
+  }
+  .navtoggle span{width:24px;height:2px;background:var(--ink);transition:transform .2s ease, opacity .2s ease;}
+  .navtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .navtoggle.open span:nth-child(2){opacity:0;}
+  .navtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-drawer{
+    display:none;
+    flex-direction:column;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:8px 32px 22px;
+  }
+  .mobile-drawer.open{display:flex;}
+  .mobile-drawer a{
+    padding:14px 0;font-size:16px;font-weight:500;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-drawer a:last-child{border-bottom:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:100px 32px 0;
+    background:var(--paper);
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1160px;margin:0 auto;
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(40px,5.6vw,66px);
+    line-height:1.03;
+    margin:22px 0 24px;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--orange);
+  }
+  .hero p{
+    font-size:17px;max-width:480px;color:#48453f;margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
+  .btn{
+    font-family:var(--mono);font-size:13.5px;letter-spacing:0.02em;
+    padding:14px 24px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--ink);transition:all .2s ease;
+  }
+  .btn-solid{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .btn-solid:hover{background:var(--orange-deep);border-color:var(--orange-deep);}
+  .btn-line:hover{background:var(--ink);color:var(--paper);}
+
+  /* horizon graphic — the signature visual: a sun bisected by the road line */
+  .horizon-mark{
+    position:relative;width:100%;aspect-ratio:1/1;max-width:400px;justify-self:center;
+  }
+  .horizon-mark svg{width:100%;height:100%;}
+  .hero-band{
+    border-top:1px solid var(--line);
+    padding:22px 0 26px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+    max-width:1160px;margin:0 auto;
+  }
+  .hero-band .stat{font-family:var(--mono);font-size:12.5px;color:#6b675f;}
+  .hero-band .stat b{display:block;font-family:var(--display);font-size:22px;color:var(--ink);font-weight:600;margin-bottom:2px;}
+
+  /* ---------- SECTION generic ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);margin-top:14px;}
+  .section-head p{color:#5c584f;margin-top:16px;font-size:16px;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--sand);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-copy p{color:#48453f;margin-bottom:16px;font-size:15.5px;}
+  .pillars{display:flex;flex-direction:column;gap:0;}
+  .pillar{
+    padding:22px 0;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:70px 1fr;gap:18px;
+  }
+  .pillar:last-child{border-bottom:1px solid var(--line);}
+  .pillar .tag{font-family:var(--mono);font-size:12px;color:var(--orange-deep);letter-spacing:0.08em;}
+  .pillar h3{font-size:17px;margin-bottom:6px;}
+  .pillar p{font-size:14.5px;color:#5c584f;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--paper);padding:38px 34px;
+    display:flex;flex-direction:column;gap:14px;
+    transition:background .2s ease;
+  }
+  .service-card:hover{background:#fff;}
+  .service-letter{
+    font-family:var(--display);font-size:15px;font-weight:700;
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--ink);color:var(--amber);
+  }
+  .service-card h3{font-size:19px;}
+  .service-card ul{list-style:none;font-size:14.5px;color:#5c584f;display:flex;flex-direction:column;gap:6px;}
+  .service-card li::before{content:"— ";color:var(--orange);}
+
+  /* ---------- AUTOMOBILE SPOTLIGHT ---------- */
+  .auto-spot{
+    background:var(--night);color:var(--paper);
+    padding:90px 0;
+    position:relative;overflow:hidden;
+  }
+  .auto-inner{
+    display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+  }
+  .auto-spot .eyebrow{color:var(--amber);}
+  .auto-spot .eyebrow::before{background:var(--amber);}
+  .auto-spot h2{font-size:clamp(26px,3.2vw,38px);margin:16px 0 20px;color:#fff;}
+  .auto-spot p{color:#c9cde0;font-size:15.5px;margin-bottom:28px;max-width:440px;}
+  .auto-graphic{
+    aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.18);
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .auto-graphic svg{width:78%;}
+
+  /* ---------- WHY ---------- */
+  .why{background:var(--sand);}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .badge-24{
+    width:96px;height:96px;border-radius:50%;
+    border:1px dashed var(--orange-deep);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    font-family:var(--mono);color:var(--orange-deep);margin-bottom:26px;
+  }
+  .badge-24 b{font-family:var(--display);font-size:22px;color:var(--ink);}
+  .why-copy p{color:#48453f;font-size:15.5px;margin-bottom:14px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper);}
+  .contact .eyebrow{color:var(--amber);}
+  .contact .eyebrow::before{background:var(--amber);}
+  .contact h2{color:#fff;font-size:clamp(28px,3.4vw,40px);margin-top:14px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;}
+  .contact-list{display:flex;flex-direction:column;gap:0;}
+  .contact-row{
+    display:grid;grid-template-columns:90px 1fr;gap:18px;
+    padding:20px 0;border-top:1px solid rgba(255,255,255,0.12);
+    font-size:15px;
+  }
+  .contact-row:last-child{border-bottom:1px solid rgba(255,255,255,0.12);}
+  .contact-row .k{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;color:#9c988e;text-transform:uppercase;}
+  .contact-row a:hover{color:var(--amber);}
+  .socials{display:flex;gap:14px;margin-top:30px;}
+  .social-pill{
+    font-family:var(--mono);font-size:12.5px;border:1px solid rgba(255,255,255,0.25);
+    padding:9px 16px;border-radius:20px;transition:all .2s ease;
+  }
+  .social-pill:hover{background:var(--orange);border-color:var(--orange);}
+  .cta-panel{
+    border:1px solid rgba(255,255,255,0.18);padding:34px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .cta-panel h3{font-size:20px;color:#fff;}
+  .cta-panel p{font-size:14.5px;color:#c9c6bc;}
+  .agent{font-family:var(--mono);font-size:13px;color:#9c988e;border-top:1px solid rgba(255,255,255,0.12);padding-top:18px;margin-top:6px;}
+  .agent b{color:var(--amber);display:block;font-family:var(--body);font-size:15px;margin-bottom:2px;}
+
+  footer{
+    background:var(--ink);color:#8a867c;
+    padding:26px 0;font-family:var(--mono);font-size:12px;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (min-width:1400px){
+    .wrap, nav, .hero-inner, .hero-band{max-width:1280px;}
+  }
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .navtoggle{display:flex;}
+    .nav-cta{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .horizon-mark{order:-1;max-width:260px;}
+    .hero-band{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .auto-inner, .why-grid, .contact-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .hero{padding-top:88px;}
+  }
+
+  @media (max-width:600px){
+    .wrap, nav{padding-left:22px;padding-right:22px;}
+    .hero{padding-left:22px;padding-right:22px;}
+    section{padding:64px 0;}
+    .hero-ctas, .hero-ctas > div{flex-direction:column;align-items:stretch;}
+    .btn{justify-content:center;text-align:center;}
+    .service-card{padding:28px 22px;}
+    .auto-graphic{aspect-ratio:5/4;}
+    .cta-panel{padding:26px 22px;}
+  }
+
+  @media (max-width:420px){
+    .brand{font-size:17px;}
+    .hero h1{font-size:34px;}
+    .hero p{font-size:15.5px;}
+    .hero-band{grid-template-columns:1fr 1fr;gap:16px 12px;}
+    .hero-band .stat b{font-size:19px;}
+    .badge-24{width:80px;height:80px;}
+    .contact-row{grid-template-columns:1fr;gap:4px;}
+    .pillar{grid-template-columns:44px 1fr;}
+  }
+
+  @media (hover:none){
+    .navlinks a::after{display:none;}
+  }
+
+  /* ---------- POLISH: elevation, reveal, floating button ---------- */
+  .service-card{transition:background .2s ease, box-shadow .25s ease, transform .25s ease;}
+  .service-card:hover{box-shadow:0 18px 40px -20px rgba(28,27,26,0.25);transform:translateY(-3px);}
+  .cta-panel{transition:box-shadow .25s ease;}
+  .cta-panel:hover{box-shadow:0 18px 40px -18px rgba(0,0,0,0.4);}
+  .pillar{transition:padding-left .25s ease;}
+  .pillar:hover{padding-left:8px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .whatsapp-float{
+    position:fixed;right:20px;bottom:20px;z-index:60;
+    width:56px;height:56px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -8px rgba(0,0,0,0.45);
+    transition:transform .2s ease;
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+  .whatsapp-float svg{width:28px;height:28px;}
+
+  /* ---------- PROCESS ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .process-step{background:var(--paper);padding:32px 26px;}
+  .process-num{font-family:var(--mono);font-size:12px;color:var(--orange-deep);letter-spacing:0.08em;margin-bottom:14px;}
+  .process-step h3{font-size:16.5px;margin-bottom:8px;}
+  .process-step p{font-size:14px;color:#5c584f;}
+
+  @media (max-width:860px){
+    .process-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .process-grid{grid-template-columns:1fr;}
+    .whatsapp-float{width:50px;height:50px;right:14px;bottom:14px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Horizon+ Multiservices",
+  "description": "Accompagnement administratif et juridique, immobilier, automobile et commerce général à Niamey, Niger.",
+  "telephone": ["+227 96 73 13 22", "+227 92 85 81 82"],
+  "email": "horizonplusmultiservices@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Niamey - Goudel",
+    "addressCountry": "NE"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "areaServed": "Niger"
+}
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Horizon<span class="plus">+</span>&nbsp;Multiservices</div>
+    <div class="navlinks">
+      <a href="#apropos">Qui sommes-nous</a>
+      <a href="#services">Services</a>
+      <a href="#automobile">Automobile</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact" style="display:inline-block;">Nous contacter</a>
+    <button class="navtoggle" id="navtoggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#apropos">Qui sommes-nous</a>
+    <a href="#services">Services</a>
+    <a href="#automobile">Automobile</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Niamey — Goudel, Niger</div>
+      <h1>La solution qui vous <em>rapproche</em> du futur.</h1>
+      <p>Horizon+ Multiservices accompagne particuliers et entreprises sur leurs démarches administratives, l'immobilier, l'automobile et le commerce — un seul contact, plusieurs solutions.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+22796731322">Appeler maintenant</a>
+        <a class="btn btn-line" href="https://wa.me/22792858182">WhatsApp</a>
+        <a class="btn btn-line" href="mailto:horizonplusmultiservices@gmail.com">Écrire par e-mail</a>
+      </div>
+    </div>
+    <div class="horizon-mark">
+      <svg viewBox="0 0 400 400" fill="none">
+        <circle cx="200" cy="180" r="120" fill="#E8622C"/>
+        <circle cx="200" cy="180" r="120" fill="url(#fade)"/>
+        <line x1="20" y1="240" x2="380" y2="240" stroke="#1C1B1A" stroke-width="2"/>
+        <g stroke="#F2A93C" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 22">
+          <line x1="20" y1="280" x2="380" y2="280"/>
+        </g>
+        <defs>
+          <linearGradient id="fade" x1="200" y1="60" x2="200" y2="240" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F2A93C" stop-opacity="0"/>
+            <stop offset="1" stop-color="#FBF8F2" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-band">
+    <div class="stat"><b>4</b>Pôles d'activité</div>
+    <div class="stat"><b>24/7</b>Disponibilité</div>
+    <div class="stat"><b>3</b>Missions : entrepreneuriat, commerce, réseautage</div>
+    <div class="stat"><b>NE</b>Ancrés à Niamey, ouverts à l'international</div>
+  </div>
+</section>
+
+<div class="route-rule"></div>
+
+<section class="about" id="apropos">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="eyebrow">Qui sommes-nous</div>
+      <h2 style="margin-top:14px;font-size:clamp(26px,3vw,34px);">Un carrefour d'opportunités et d'échanges</h2>
+      <p style="margin-top:20px;">Horizon+ Multiservices réunit un groupe de jeunes professionnels issus de filières diverses. Notre mission : créer et renforcer les réseaux de l'entrepreneuriat, du commerce international et du réseautage, pour accompagner les acteurs économiques vers la réussite.</p>
+      <p>Notre vision : bâtir un écosystème solide où l'innovation, la coopération et l'ouverture sur le monde constituent les clés d'un développement durable.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="tag">01</div>
+        <div><h3>Entrepreneuriat</h3><p>Formations, conseils et partenariats stratégiques pour soutenir les initiatives des jeunes et des professionnels.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="tag">02</div>
+        <div><h3>Commerce international</h3><p>Nous facilitons les échanges au-delà des frontières, en mettant en relation producteurs, investisseurs et marchés.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="tag">03</div>
+        <div><h3>Réseautage</h3><p>Une plateforme dynamique où idées, compétences et opportunités se rencontrent pour générer une croissance collective.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="route-rule"></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Nos services</div>
+      <h2>Quatre pôles, un seul interlocuteur</h2>
+      <p>De la paperasse administrative à la voiture qu'il vous faut, nous couvrons l'essentiel de vos démarches sous un même toit.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0 32px 0 32px; max-width:1160px;">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-letter">A</div>
+        <h3>Administratif &amp; juridique</h3>
+        <ul>
+          <li>Assistance dans les demandes de visas</li>
+          <li>Accompagnement administratif</li>
+          <li>Rédaction de contrats (travail, vente, bail, partenariat…)</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-letter">B</div>
+        <h3>Immobilier</h3>
+        <ul>
+          <li>Vente et location de maisons et d'appartements</li>
+          <li>Vente de parcelles</li>
+          <li>Construction d'immeubles et de maisons pour tiers</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-letter">C</div>
+        <h3>Automobile</h3>
+        <ul>
+          <li>Vente et location de voitures</li>
+          <li>Importation de véhicules sur commande</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-letter">D</div>
+        <h3>Commerce général</h3>
+        <ul>
+          <li>Commande et importation de produits et marchandises</li>
+          <li>Achat, vente et distribution — alimentaire, vestimentaire, électronique, équipements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Notre méthode</div>
+      <h2>Comment ça marche</h2>
+      <p>Un processus simple, du premier contact à la solution livrée.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Vous nous contactez</h3>
+        <p>Par téléphone, e-mail ou WhatsApp — décrivez-nous votre besoin.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Diagnostic</h3>
+        <p>Notre équipe analyse votre demande et identifie la meilleure solution.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Proposition</h3>
+        <p>Nous vous présentons une offre claire, adaptée à votre budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3>Réalisation</h3>
+        <p>Nous exécutons et vous accompagnons jusqu'à satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="route-rule night" style="background-color:var(--night);"></div>
+
+<section class="auto-spot" id="automobile">
+  <div class="wrap auto-inner">
+    <div>
+      <div class="eyebrow">Pôle automobile</div>
+      <h2>Votre solution automobile en un seul contact.</h2>
+      <p>Achat, vente ou location — trouvez la voiture qu'il vous faut. Importation sur commande possible. Votre partenaire de confiance à Niamey.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a class="btn btn-solid" href="tel:+22796731322">Appeler</a>
+        <a class="btn btn-line" style="border-color:rgba(255,255,255,0.4);color:#fff;" href="https://wa.me/22792858182">WhatsApp</a>
+      </div>
+    </div>
+    <div class="auto-graphic">
+      <svg viewBox="0 0 200 120" fill="none">
+        <rect x="10" y="60" width="180" height="2" fill="rgba(255,255,255,0.25)"/>
+        <path d="M20 78 L45 78 L55 60 L110 60 L125 78 L180 78 L180 92 L20 92 Z" stroke="#F2A93C" stroke-width="2" fill="none"/>
+        <circle cx="55" cy="92" r="9" stroke="#F2A93C" stroke-width="2" fill="#14213D"/>
+        <circle cx="150" cy="92" r="9" stroke="#F2A93C" stroke-width="2" fill="#14213D"/>
+        <line x1="65" y1="60" x2="65" y2="76" stroke="#F2A93C" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="route-rule"></div>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div>
+      <div class="badge-24"><b>24/7</b>dispo.</div>
+      <div class="eyebrow">Pourquoi nous choisir</div>
+      <h2 style="margin-top:14px;font-size:clamp(24px,3vw,32px);">Une équipe, plusieurs expertises</h2>
+    </div>
+    <div class="why-copy">
+      <p>Nous formons un groupe de jeunes professionnels issus de diverses filières. Forts de nos expériences et de notre complémentarité, nous œuvrons ensemble pour le développement.</p>
+      <p>Nous nous engageons à offrir des solutions adaptées aux besoins et aux attentes du marché, disponibles 24 heures sur 24, 7 jours sur 7.</p>
+    </div>
+  </div>
+</section>
+
+<div class="route-rule night" style="background-color:var(--ink);"></div>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Parlons de votre projet</h2>
+    <div class="contact-grid">
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="k">Adresse</div>
+          <div>Niamey — Goudel, Niger</div>
+        </div>
+        <div class="contact-row">
+          <div class="k">Téléphone</div>
+          <div><a href="tel:+22796731322">+227 96 73 13 22</a><br><a href="tel:+22792858182">+227 92 85 81 82</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="k">E-mail</div>
+          <div><a href="mailto:horizonplusmultiservices@gmail.com">horizonplusmultiservices@gmail.com</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="k">Web</div>
+          <div>www.horizonplus.com</div>
+        </div>
+        <div class="socials">
+          <span class="social-pill">Facebook</span>
+          <span class="social-pill">LinkedIn</span>
+          <a class="social-pill" href="https://wa.me/22792858182">WhatsApp</a>
+        </div>
+      </div>
+      <div class="cta-panel">
+        <h3>Une question, un besoin précis ?</h3>
+        <p>Contactez-nous par téléphone ou e-mail — un membre de l'équipe vous répond rapidement.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-solid" href="mailto:horizonplusmultiservices@gmail.com">Envoyer un e-mail</a>
+          <a class="btn btn-line" style="border-color:rgba(255,255,255,0.4);color:#fff;" href="https://wa.me/22792858182">WhatsApp</a>
+        </div>
+        <div class="agent">
+          <b>Mamadou Moctar André Abdoul Kader</b>
+          Contact référent — Horizon+ Multiservices
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/22792858182" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3C8.5 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>© 2026 Horizon+ Multiservices — Niamey, Niger</div>
+    <div>« La solution qui vous rapproche du futur »</div>
+  </div>
+</footer>
+
+<script>
+  const navtoggle = document.getElementById('navtoggle');
+  const drawer = document.getElementById('mobileDrawer');
+  navtoggle.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    navtoggle.classList.toggle('open', open);
+    navtoggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      navtoggle.classList.remove('open');
+      navtoggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
